@@ -17,7 +17,20 @@ class Pattern
     public void Display(int iRow, int iCol)
     {
         int i = 0, j = 0;
- 
+        for(i = 1; i<= iRow;i++)
+        {
+            for(j =1 ; j<= iCol; j++)
+            {
+                if((i + j) <= 5)
+                {
+                    System.out.print("*\t");
+                }
+                else
+                {
+                    System.out.print("#\t");
+                }
+            }
+            System.out.println();
     }
 }
 /////////////////////////////////////////////////////////////////////////////
@@ -56,4 +69,5 @@ class program1_2
 // *       *       #       #
 // *       *       *       #
 // *       *       *       *
+
 /////////////////////////////////////////////////////////////////////////////////////
