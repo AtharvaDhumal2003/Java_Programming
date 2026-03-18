@@ -1,0 +1,48 @@
+Jay Ganesh From marvellous Infosystems
+
+Demo.txt
+PPA.txt
+program1_1.java
+program1_2.java
+program1_3.java
+program1_4.java
+program1_5.java
+
+Jay Ganesh From marvellous Infosystems
+
+import java.util.*;
+import java.io.*;
+import java.io.File;
+
+class program1_1
+{
+    public static void main(String A[]) throws Exception
+    {
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the first file name : ");
+        String first = sobj.next();
+        
+        System.out.println("Enter the Second file name : ");
+        String second = sobj.next();
+
+        File fobj = new File(first);
+        File fobj2 = new File(second);
+
+        if(fobj2.createNewFile())
+        {
+            System.out.println("File is created with name : "+second);
+        }
+        else
+        {
+            System.out.println("Unable to create file");
+        }
+
+
+        if(fobj.exists())
+        {   
+            if(fobj.canRead())
+            {   
+                if(fobj.canWrite())
+                {
+                 
