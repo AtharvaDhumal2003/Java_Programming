@@ -1,0 +1,239 @@
+Jay Ganesh From marvellous Infosystems
+
+Demo.txt
+PPA.txt
+program1_1.java
+program1_2.java
+program1_3.java
+program1_4.java
+program1_5.java
+
+Jay Ganesh From marvellous Infosystems
+
+import java.util.*;
+import java.io.*;
+import java.io.File;
+
+class program1_1
+{
+    public static void main(String A[]) throws Exception
+    {
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the first file name : ");
+        String first = sobj.next();
+        
+        System.out.println("Enter the Second file name : ");
+        String second = sobj.next();
+
+        File fobj = new File(first);
+        File fobj2 = new File(second);
+
+        if(fobj2.createNewFile())
+        {
+            System.out.println("File is created with name : "+second);
+        }
+        else
+        {
+            System.out.println("Unable to create file");
+        }
+
+
+        if(fobj.exists())
+        {   
+            if(fobj.canRead())
+            {   
+                if(fobj.canWrite())
+                {
+                    FileWriter Writer = new FileWriter(fobj2,true);// true = append mode
+
+                    
+                    Scanner Reader = new Scanner(fobj);
+                
+                    while(Reader.hasNextLine())
+                    {
+                        String Data = Reader.nextLine();
+                        Writer.write(Data);
+                    }
+
+                    Reader.close();
+                    System.out.println("Data is written in file.");
+                    Writer.close();
+                } 
+                else 
+                {
+                    System.out.println("The file is not writable..");
+                    return;
+                }
+            } 
+            else 
+            {
+                System.out.println("Unable to read from file.");
+                return;
+            }
+
+
+        }
+        else
+        {
+            System.out.println("File not exists : "+first);
+            return;
+        }
+
+
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
+//Enter the first file name :
+//Demo.txt
+//Enter the Second file name :
+//PPA.txt
+//File is created with name : PPA.txt
+//The Data from file is :
+//Data is written in file.
+/////////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+import java.io.File;;
+
+class program1_2
+{
+    public static void main(String A[]) throws Exception
+    {
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the file name : ");
+        String str = sobj.next();
+
+        File myoBj = new File(str);
+
+        if(myoBj.isFile())
+        {
+            System.out.println("File is with name "+str+" is regular file");
+        }
+        else
+        {
+            System.out.println("File is not a regular file");
+        }
+
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
+///C:\Users\athar\Desktop\LBA\Assignment57>java program1_2.java
+//Enter the file name :
+//PPA.txt
+//File is with name PPA.txt is regular file
+/////////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+import java.io.File;;
+
+class program1_3
+{
+    public static void main(String A[]) throws Exception
+    {
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the directory name : ");
+        String str = sobj.next();
+
+        File myoBj = new File(str);
+
+        if(myoBj.mkdir())
+        {
+            System.out.println("Directory is created successfully.");
+        }
+        else
+        {
+            System.out.println("unable to create directory.");
+        }
+
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
+//C:\Users\athar\Desktop\LBA\Assignment57>java program1_3.java
+//Enter the directory name :
+//Marvellous
+//Directory is created successfully.
+/////////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+import java.io.File;;
+
+//checksum
+class program1_3
+{
+    public static void main(String A[]) throws Exception
+    {
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the directory name : ");
+        String str = sobj.next();
+
+        File myoBj = new File(str);
+
+        if(myoBj.mkdir())
+        {
+            System.out.println("Directory is created successfully.");
+        }
+        else
+        {
+            System.out.println("unable to create directory.");
+        }
+
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
+//C:\Users\athar\Desktop\LBA\Assignment57>java program1_3.java
+//Enter the directory name :
+//Marvellous
+//Directory is created successfully.
+/////////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+import java.io.File;
+
+class program1_5
+{
+    public static void main(String A[]) throws Exception
+    {
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter the directory name/path : ");
+        String str = sobj.nextLine();
+
+        File Directory = new File(str);
+
+        if(Directory.exists() && Directory.isDirectory())
+        {
+            File[] files = Directory.listFiles();
+
+                if (files != null) 
+                {
+                    for(int i = 0; i < Files.length; i++) 
+                    {
+                        System.out.println(file.getName());
+                    }
+
+                }
+        }
+        else
+        {
+            System.out.println("Ther is no such directory.");
+        }
+        
+    }
+}
+////////////////////////////////////////////////////////////////////////////
+//C:\Users\athar\Desktop\LBA\Assignmnet56>java program1_5.java
+//Enter the directory name/path :
+//Assignment
+//Demo.txt
+//PPA.txt
+//program1_1.java
+//program1_2.java
+//program1_3.java
+//program1_4.java
+//program1_5.java
+/////////////////////////////////////////////////////////////////////////////
+
